@@ -12,9 +12,13 @@ class InboundSMS(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
 
     def create(self, request, *args, **kwargs):
-        request_body = json.loads(request.body)
-        response, status_code = save_inbound_sms(request_body)
-        return JsonResponse(response, status=status_code)
+        try:
+            request_body = json.loads(request.body)
+            response, status_code = save_inbound_sms(request_body)
+            return JsonResponse(response, status=status_code)
+
+        except Exception as e:
+            return JsonResponse({'message': '', 'error': 'Request params should be in JSON format'})
 
 
 class OutboundSMS(viewsets.ModelViewSet):
@@ -22,6 +26,10 @@ class OutboundSMS(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
 
     def create(self, request, *args, **kwargs):
-        request_body = json.loads(request.body)
-        response, status_code = save_outbound_sms(request_body)
-        return JsonResponse(response, status=status_code)
+        try:
+            request_body = json.loads(request.body)
+            response, status_code = save_outbound_sms(request_body)
+            return JsonResponse(response, status=status_code)
+
+        except Exception as e:
+            return JsonResponse({'message': '', 'error': 'Request params should be in JSON format'})

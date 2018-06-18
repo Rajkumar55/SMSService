@@ -29,6 +29,11 @@ def save_inbound_sms(data):
             response['message'] = ''
             response['error'] = 'unknown failure'
             response_status_code = 400
+
+    except KeyError as ke:
+        response['message'] = ''
+        response['error'] = '{} is missing'.format(ke)
+        response_status_code = 400
     
     except ValueError as ve:
         response['message'] = ''
