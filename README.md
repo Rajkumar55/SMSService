@@ -46,6 +46,7 @@ python manage.py test SMS.tests
 ```
 
 ## API Docs
+The APIs are authenticated using Basic Authentication
 For Inbound SMS
 ```
 POST http://13.232.95.21/inbound/sms/
