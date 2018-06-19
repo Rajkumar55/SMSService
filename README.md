@@ -2,6 +2,7 @@
 
 This is an SMS Service to process inbound and outbound SMS requests
 It is developed using Django Rest Framework with MySQL DataBase.
+It is developed with Python 3.6.5 and Django 2.0.6.
 It uses Basic Authentication for both the APIs
 
 ## Prerequisites
@@ -38,20 +39,14 @@ python manage.py runserver
 ```
 This command is used to start the server
 
-## Testcases
-API Level Testcases and Functional Testcases have been added.
-Run the following command to run all the testcases:
-```
-python manage.py test SMS.tests
-```
-
 ## API Docs
-The APIs are authenticated using Basic Authentication
-For Inbound SMS
+Both of the APIs are authenticated using Basic Authentication
+
+### For Inbound SMS
 ```
 POST http://13.232.95.21/inbound/sms/
 ```
-### Sample Request
+#### Sample Request
 ```
 {
 	"from": "919876543210",
@@ -59,7 +54,7 @@ POST http://13.232.95.21/inbound/sms/
 	"text": "Hello Plivo"
 }
 ```
-### Sample Response
+#### Sample Response
 ```
 {
     "message": "inbound sms is ok",
@@ -67,11 +62,11 @@ POST http://13.232.95.21/inbound/sms/
 }
 ```
 
-For Outbound SMS
+### For Outbound SMS
 ```
 POST http://13.232.95.21/outbound/sms/
 ```
-### Sample Request
+#### Sample Request
 ```
 {
 	"from": "919876543210",
@@ -79,10 +74,17 @@ POST http://13.232.95.21/outbound/sms/
 	"text": "Hello Plivo"
 }
 ```
-### Sample Response
+#### Sample Response
 ```
 {
     "message": "outbound sms is ok",
     "error": ""
 }
+```
+
+## Testcases
+Testcases have been added in SMS/tests/ folder.
+Run the following command to run all the testcases:
+```
+python manage.py test SMS/tests
 ```
