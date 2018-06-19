@@ -39,6 +39,13 @@ python manage.py runserver
 ```
 This command is used to start the server
 
+## Testcases
+Testcases have been added in SMS/tests/ folder.
+Run the following command to run all the testcases:
+```
+python manage.py test SMS/tests
+```
+
 ## API Docs
 Both of the APIs are authenticated using Basic Authentication
 
@@ -80,11 +87,4 @@ POST http://13.232.95.21/outbound/sms/
     "message": "outbound sms is ok",
     "error": ""
 }
-```
-
-## Testcases
-Testcases have been added in SMS/tests/ folder.
-Run the following command to run all the testcases:
-```
-python manage.py test SMS/tests
 ```
