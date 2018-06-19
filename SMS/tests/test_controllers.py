@@ -4,7 +4,7 @@ from SMS.models import SMS
 from django.core.cache import cache
 
 
-class URLInfoTestCase(TestCase):
+class SMSTestCase(TestCase):
     fixtures = ['sms.json']
 
     def test_save_inbound_sms_with_valid_data(self):
@@ -58,7 +58,7 @@ class URLInfoTestCase(TestCase):
 
     def test_save_outbound_sms_with_valid_data(self):
         mock_data = {
-            "from": "919876543210",
+            "from": "919944768524",
             "to": "919123456780",
             "text": "Hello Plivo"
         }
